@@ -1,0 +1,28 @@
+.sec-1-asp {
+    display: flex;
+    align-items: center;
+    margin: 80px 100px 0px 100px;
+    gap:40px;
+
+}
+
+#myasp {
+    margin: 100px 100px 0px 100px;
+}
+
+.career{
+    /*background-color: #070707;*/
+    background-color: #393939;
+    padding: 0px 20px 0px 20px;
+    border-radius: 20px;
+
+}
+
+.education{
+    /*background-color: #070707;*/
+    background-color: #393939;
+    padding: 0px 20px 0px 20px;
+    border-radius: 20px;
+
+}
+

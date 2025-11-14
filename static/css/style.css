@@ -48,14 +48,14 @@ body {
 .nav-links a{
     font-size:18px;
     color: white;
-    transition: 0.8s;
+    transition: 0.5s;
     font-weight: 200;
     text-decoration: none;
 }
 
 .nav-links a:hover{
     color: white;
-   transition: 0.8s;
+   transition: 0.3s;
    font-size:19px;
     font-weight: bold;
 
@@ -73,13 +73,13 @@ body {
     text-decoration: none;
     color: #cfcfcf;
     margin: 0 8px;
-    transition: 0.9s ;
+    transition: 0.2s ;
 }
 
 #details a:hover {
     color: white;
     font-size:18px;
-    transition: 0.9s;
+    transition: 0.2s;
     font-weight: bold;
 }
 
