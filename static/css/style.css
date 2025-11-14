@@ -1,0 +1,90 @@
+
+/* THIS IS THE DEFAULT STYLE SHEET FOR ALL PAGES.
+    THIS MUST BE USED FOR ALL PAGES, THEN A SEPERATE STYLE SHEET CAN BE CREATED
+    FOR THOSE PAGES FOR MORE DIRECT CUSTOMISATION.
+ */
+
+html {
+    background-color: black;
+}
+
+body {
+    background-color: black;
+    font-family: "ubuntu";
+    color: white;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px; /* space around edges */
+    padding-left: 30px;
+    padding-right: 30px;
+    }
+
+
+.nav-bar {
+    display: flex;
+    justify-content: right;
+    margin-right:40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap:25px;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.nav-links a{
+    font-size:18px;
+    color: white;
+    transition: 0.8s;
+    font-weight: 200;
+    text-decoration: none;
+}
+
+.nav-links a:hover{
+    color: white;
+   transition: 0.8s;
+   font-size:19px;
+    font-weight: bold;
+
+}
+
+#details {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+    color: #cfcfcf;
+}
+
+#details a {
+    text-decoration: none;
+    color: #cfcfcf;
+    margin: 0 8px;
+    transition: 0.9s ;
+}
+
+#details a:hover {
+    color: white;
+    font-size:18px;
+    transition: 0.9s;
+    font-weight: bold;
+}
+
+#details i {
+    margin-right: 6px; /* space between icon and text */
+    font-size: 20px;
+    vertical-align: middle;
+}

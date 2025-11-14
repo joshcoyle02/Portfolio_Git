@@ -1,0 +1,68 @@
+.sec-container {
+    display: flex;
+    align-items: center;       /* ✅ vertically align both items */
+    justify-content: space-between;
+    margin: 20px 100px 0px 100px;
+    gap: 15px;
+    min-height: 60vh;          /* ✅ ensures enough height for alignment */
+}
+
+
+/* Left side (text) */
+.sec-1 {
+    margin: 0;                /* ✅ reset margins */
+    background-color: #070707;
+    padding:30px;
+    border-radius: 30px;
+
+}
+
+.sec-1 h1{
+    font-weight: 200;
+}
+
+.sec-1 p {
+    line-height: 1.6;
+    font-weight: 250;/* better readability */
+    font-size:18px;
+}
+
+/* Right side (image) */
+.sec-2 {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #070707;
+    padding:20px;
+    border-radius: 30px;
+}
+
+.sec-2 img {
+    width: 350px;                  /* adjust image size */
+    border-radius: 50%;
+    /*object-fit: cover;*/
+
+}
+
+#word1, #word2, #word3, #word4{
+    color: #eb5757;
+    font-weight: 400;
+}
+
+#A {
+    color: gold;
+    font-weight: 490;
+}
+
+.sec-3 {
+    margin:0 100px 0 100px;
+    padding:30px;
+    background-color: #070707;
+    border-radius: 30px;
+
+}
+
+.sec-3 p {
+    line-height: 1.6;
+    font-weight: 250;/* better readability */
+    font-size:18px;
+}

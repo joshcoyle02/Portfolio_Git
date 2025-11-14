@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About me</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/aboutme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="header">
+
+        <h2 id="details">
+            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            |
+            <a href="https://www.linkedin.com/in/joshua-coyle-6560521a4?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FXr1h6sqQuCWMBBa3qzkWQ%3D%3D" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+        </h2>
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                |
+                <li><a href="{{ url_for('projects') }}">Projects & Skills</a></li>
+                |
+                <li><a href="{{ url_for('aspirations') }}">Aspirations</a></li>
+                |
+                <li><a href="{{ url_for('contactme') }}">Contact Me</a></li>
+            </ul>
+
+            </div>
+        </div>
+
+    <div class="sec-container">
+        <div class="sec-1">
+            <h1>Who am I?</h1>
+            <p>I'm a recent graduate from the University of the West of Scotland where I achieved a <span id="word1">first
+                class honors </span>degree in Computing Science.  Throughout my time at university, I discovered
+                my <span id="word4">passion for engineering solutions through problem solving</span> and digital application.
+                Although my early years of university sparked my pursuit of learning software development
+                fundamentals and computer architecture, It wasn't until my final year where I took a class in
+                <span id="word2">Machine Learning</span> where the fire was lit fully.  This brought me to applying machine learning
+                to my dissertation where <span id="word3"> designed a model to predict UFC matches and give fighter statistic
+                analysis which was graded an</span><span id="A"> A.</span> My UFC predictor model is on my portfolio if you would like to
+                check it out.
+                </p>
+        </div>
+
+        <div class="sec-2">
+            <img src="/static/images/me.jpg" alt="Photo of Joshua Coyle">
+
+        </div>
+    </div>
+
+    <div class="sec-3">
+        <p>I’ve built several projects involving Python, Flask, and data visualisation, and I’m currently expanding my portfolio to include web-integrated ML models and interactive dashboards.
+
+I'm eager to pursue a career where I can apply my analytical thinking and technical skills to solve meaningful problems, particularly in AI, data analytics, or software engineering roles that drive innovation and impact.</p>
+    </div>
+
+</body>
+</html>

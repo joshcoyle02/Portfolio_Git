@@ -1,0 +1,122 @@
+/* ---------- Header Layout ---------- */
+
+
+/* Center name precisely */
+#name {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 35px;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Right-aligned details */
+#details {
+    font-size: 17px;
+    font-weight: 400;
+    margin: 0;
+    text-align: left;
+    color: #cfcfcf;
+}
+
+
+
+
+
+.hero-container {
+    display: flex;
+    justify-content: space-between;  /* space text and image apart */
+    align-items: center;              /* vertically align them */
+    padding: 40px;
+    gap: 40px;
+    }
+
+.hero {
+    /*margin-top:100px;*/
+    width: 50%;
+
+
+}
+
+.hero h1{
+    margin-left:100px;
+    font-size:45px;
+}
+
+#joshua { color: #56ccf2; }
+#bold { color: #f2c94c; font-weight: 500; }
+#bold2 { color: #6fcf97; font-weight: 500; }
+#bold3 { color: #eb5757; font-weight: 500; }
+
+#bold, #bold2, #bold3 {
+    font-weight: normal;
+}
+
+ .hero p {
+     font-size:20px;
+     margin-left:100px;
+     font-weight: lighter;
+
+ }
+
+ .picture {
+     justify-content: right;
+
+ }
+
+ .picture img {
+    height: 400px;
+     width: 400px;
+     border-radius: 10%;
+     margin-right:200px;
+     /*margin-righttop: 100px;*/
+     box-shadow: 0 0 0px #393939;
+ }
+
+ /******************************/
+
+.sec-2-wrapper{
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+    padding: 50px;
+    margin: 30px 120px 0px 120px;
+    color:white;
+}
+
+.sec-2-wrapper h1 {
+    font-size:25px;
+}
+
+.sec-2-wrapper button {
+    /*padding: 25px 65px 35px 65px;*/
+    width: 600px;
+    height:80px;
+    font-family: ubuntu;
+    font-size:20px;
+
+    background-color: #6fcf97;
+    border-radius: 25px;
+    border: none;
+    transition: 0.8s;
+}
+
+.sec-2-wrapper a{
+    text-decoration: none;
+    color: white;
+}
+
+
+#but1 { background-color: #0c0c0c; font-weight: lighter; color:white }
+#but1:hover{ background-color: #f2c94c; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
+cursor: pointer;    padding:-5px 10px 5px 10px;    border-radius: 34px;}
+#but2 { background-color: #1b1b1b; font-weight: lighter; color:white }
+#but2:hover{ background-color: #eb5757; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
+cursor: pointer; padding: 5px 10px 5px 10px;border-radius: 34px;}
+#but3 { background-color: #1b1b1b; font-weight: lighter; color:white }
+#but3:hover{ background-color: #6fcf97; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
+cursor: pointer; padding: 5px 10px 5px 10px;border-radius: 34px;}
+#but4 { background-color: #1b1b1b; font-weight: lighter; color:white }
+#but4:hover{ background-color: #56ccf2; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
+cursor: pointer; padding: 5px 10px 5px 10px;border-radius: 34px;}
