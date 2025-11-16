@@ -38,17 +38,18 @@
 
     .hero h1 {
         margin-left: 20px;
-        font-size: 38px;
+        font-size: 52px;
     }
 
     .hero p {
-        font-size:29px;
+        font-size:40px;
         margin-left: 20px;
     }
 
 
 
-    .picture img {
+    .picture img{
+    display: none;
         height: 0px;
         width: 0px;
         margin-right: 0;
