@@ -107,16 +107,44 @@
     color: white;
 }
 
+#but1, #but2, #but3, #but4 {
+    background-color: #0c0c0c;
+    font-weight: lighter;
+    color: white;
+    width: 400px;
+    height: 100px;
+    align-content: center;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 30px;
+    transition: 0.5s;
+}
 
-#but1 { background-color: #0c0c0c; font-weight: lighter; color:white }
-#but1:hover{ background-color: #f2c94c; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
-cursor: pointer;    padding:-5px 10px 5px 10px;    border-radius: 34px;}
-#but2 { background-color: #0c0c0c; font-weight: lighter; color:white }
-#but2:hover{ background-color: #eb5757; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
-cursor: pointer; padding: 5px 10px 5px 10px;border-radius: 34px;}
-#but3 { background-color: #0c0c0c; font-weight: lighter; color:white }
-#but3:hover{ background-color: #6fcf97; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
-cursor: pointer; padding: 5px 10px 5px 10px;border-radius: 34px;}
-#but4 { background-color: #0c0c0c; font-weight: lighter; color:white }
-#but4:hover{ background-color: #56ccf2; font-weight: lighter; color: black; transition: 1s;   box-shadow: 0 0 100px rgb(92, 92, 92);
-cursor: pointer; padding: 5px 10px 5px 10px;border-radius: 34px;}
+
+#but1:hover, #but2:hover, #but3:hover, #but4:hover{
+        background-color: #f2c94c;
+        font-weight: lighter;
+        color: black;
+        transition: 1s;
+        box-shadow: 0 0 100px rgb(92, 92, 92);
+        cursor: pointer;
+        padding:-5px 10px 5px 10px;
+        border-radius: 34px;
+}
+
+#but1:hover {
+    background-color:#56ccf2 ;
+}
+
+
+#but2:hover {
+    background-color:#f2c94c ;
+}
+
+#but3:hover {
+    background-color: #eb5757;
+}
+
+#but4:hover {
+    background-color: #6fcf97;
+}
