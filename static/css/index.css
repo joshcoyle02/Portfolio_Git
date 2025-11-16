@@ -60,6 +60,13 @@
 
  }
 
+ .desktop-only{
+     display: block;
+  font-size:20px;
+     margin-left:100px;
+     font-weight: lighter;
+ }
+
  .picture {
      justify-content: right;
 
