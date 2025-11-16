@@ -2,7 +2,8 @@
 @media (max-width: 1290px) {
 
     body {
-        min-height: 100vh;
+        max-height: 100vh;
+        overflow: hidden; /* This stops scrolling */
     }
 
 
@@ -80,7 +81,7 @@
         text-align: center;
         font-size:35px;
         border-radius: 30px;
-            margin-top:70px;
+            margin-top:50px;
     }
 
     #but1:hover, #but2:hover, #but3:hover, #but4:hover{
