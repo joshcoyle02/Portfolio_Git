@@ -4,12 +4,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 @app.route('/')
 def index():
-    user_agent = request.headers.get('User-Agent').lower()
+    return render_template('index.html')
 
-    if 'mobile' in user_agent or 'android' in user_agent or 'iphone' in user_agent:
-        return render_template('index-mobile.html')
-    else:
-        return render_template('index.html')
 @app.route('/about')
 def about_me():
     return render_template('aboutme.html')
