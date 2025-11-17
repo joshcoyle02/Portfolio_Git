@@ -1,0 +1,60 @@
+
+/* THIS IS THE DEFAULT STYLE SHEET FOR ALL MOBILE PAGES.
+    THIS MUST BE USED FOR ALL PAGES, THEN A SEPERATE STYLE SHEET CAN BE CREATED
+    FOR THOSE PAGES FOR MORE DIRECT CUSTOMISATION.
+ */
+
+
+body {
+    background-color: black;
+    font-family: Ubuntu;
+}
+
+
+#menu-btn {
+    margin: 20px;
+    position: fixed;
+    font-size: 28px;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;;
+    cursor: pointer;
+    z-index: 1001;        /* higher than the sidebar */
+}
+
+#menu-btn.active {
+    background-color: #393939;
+}
+
+.sidebar {
+    position: fixed;
+    padding-top:80px;
+    top: 0;
+    left: -250px;  /* hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #101010;
+    transition: left 0.3s ease;
+    z-index: 99;
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    color: white;
+    margin-top:80px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.sidebar ul {
+    list-style: none;
+    font-size: 30px;
+}
+
+
+/* When active (visible) */
+.sidebar.active {
+    left: 0;
+}

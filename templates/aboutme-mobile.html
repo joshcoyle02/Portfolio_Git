@@ -2,11 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>About me</title>
+
+    <link rel="stylesheet" href="/static/css/style-mobile.css">
+    <link rel="stylesheet" href="/static/css/aboutme-mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
-<h1> YAS</h1>
-<p> this is the mobile version of about me, loaded on a phone only.yess</p>
+
+    <!-- HEADER -->
+    <div class="header">
+        <button id="menu-btn">&#9776;</button>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav-links">
+            <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a></li>
+
+            <li><a href="https://github.com/YOUR-GITHUB" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a></li>
+
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('index') }}">Projects & Skills</a></li>
+            <li><a href="{{ url_for('index') }}">Aspirations</a></li>
+            <li><a href="{{ url_for('index') }}">Contact Me</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const sidebar = document.getElementById('sidebar');
+
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('active');
+        });
+    </script>
 
 </body>
 </html>
