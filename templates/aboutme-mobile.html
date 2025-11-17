@@ -12,22 +12,14 @@
 
 <body>
 
-    <!-- HEADER -->
-    <div class="header">
-        <button id="menu-btn">&#9776;</button>
-    </div>
+    <!-- MENU BUTTON -->
+    <button id="menu-btn">&#9776;</button>
 
     <!-- SIDEBAR -->
     <div class="sidebar" id="sidebar">
         <ul class="nav-links">
-            <li><a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
-                <i class="fa-brands fa-linkedin"></i> LinkedIn
-            </a></li>
-
-            <li><a href="https://github.com/YOUR-GITHUB" target="_blank">
-                <i class="fa-brands fa-github"></i> GitHub
-            </a></li>
-
+            <li><a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="#"><i class="fa-brands fa-github"></i> GitHub</a></li>
             <li><a href="{{ url_for('index') }}">Home</a></li>
             <li><a href="{{ url_for('index') }}">Projects & Skills</a></li>
             <li><a href="{{ url_for('index') }}">Aspirations</a></li>
@@ -35,14 +27,40 @@
         </ul>
     </div>
 
+    <!-- PAGE CONTENT THAT WILL BLUR -->
+    <div id="content">
+        <div class="sec-1">
+            <h1>Who am I?</h1>
+                <p>I'm a recent graduate from the University of the West of Scotland where I achieved a <span id="word1">first
+                class honors </span>degree in Computing Science.  Throughout my time at university, I discovered
+                my <span id="word4">passion for engineering solutions through problem solving</span> and digital application.
+                Although my early years of university sparked my pursuit of learning software development
+                fundamentals and computer architecture, It wasn't until my final year where I took a class in
+                <span id="word2">Machine Learning</span> where the fire was lit fully.  This brought me to applying machine learning
+                to my dissertation where <span id="word3"> designed a model to predict UFC matches and give fighter statistic
+                analysis which was graded an</span><span id="A"> A.</span> My UFC predictor model is on my portfolio if you would like to
+                check it out.
+                </p>
+        </div>
+
+        <div class="sec-2">
+            <img src="/static/images/me.jpg">
+        </div>
+    </div>
+
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
 
         menuBtn.addEventListener('click', () => {
             sidebar.classList.toggle('active');
+            content.classList.toggle('blurred');
         });
     </script>
+</body>
+
+
 
 </body>
 </html>

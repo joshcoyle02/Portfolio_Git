@@ -12,8 +12,9 @@ body {
 
 
 #menu-btn {
-    margin: 20px;
-    position: fixed;
+    top: 20px;        /* instead of margin */
+    left: 20px;       /* instead of margin */
+        position: fixed;
     font-size: 28px;
     border: none;
     padding: 30px 35px;
@@ -22,21 +23,38 @@ body {
     z-index: 1001;        /* higher than the sidebar */
 }
 
-#menu-btn.active {
-    background-color: #393939;
+/* Blur only the page content */
+#content.blurred {
+    filter: blur(6px) brightness(0.6);
+    transition: 0.3s ease;
 }
+
+/* Sidebar stays unblurred */
+.sidebar {
+    position: fixed;
+    padding-top:120px;
+    top: 0;
+    left: -360px;
+    width: 350px;
+    height: 100vh;
+    background-color: #090909;
+    transition: left 0.3s ease;
+    z-index: 9999;
+    border-right: 5px solid #eb5757;
+}
+
 
 .sidebar {
     position: fixed;
     padding-top:120px;
     top: 0;
-    left: -350px;  /* hidden by default */
+    left: -360px;  /* hidden by default */
     width: 350px;
     height: 100vh;
     background-color: #090909;
     transition: left 0.3s ease;
     z-index: 99;
-}
+    border-right: 5px solid #eb5757;;   /* <— this is the correct line */}
 
 /* Sidebar links */
 .sidebar a {

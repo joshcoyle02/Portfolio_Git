@@ -1,0 +1,40 @@
+.sec-1 {
+    color:white;
+    margin-top:200px;
+    margin: 200px 80px 0px 80px;
+}
+
+.sec-1 h1 {
+    text-align: center;
+    font-size:50px;
+}
+
+.sec-1 p {
+    font-size: 30px;
+    line-height: 1.6;
+}
+
+#word1, #word2, #word3, #word4{
+    color: #eb5757;
+    font-weight: 400;
+}
+
+#A {
+    color: gold;
+    font-weight: 490;
+}
+
+.sec-2 {
+    display: flex;
+    justify-content: center;
+    padding:20px;
+    border-radius: 30px;
+    margin-top:50px;
+}
+
+.sec-2 img {
+    width: 500px;                  /* adjust image size */
+    border-radius: 50%;
+    /*object-fit: cover;*/
+
+}
