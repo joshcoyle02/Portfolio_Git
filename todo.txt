@@ -2,3 +2,8 @@
 
 Started the aspirtaions webpage, need to finish.
 Pushed my current progress to git, finish the page then push the rest.
+
+16/11/2025
+
+Pushed a few changes and added mobile compatibility to the home page
+still need to do the above.
