@@ -15,7 +15,7 @@ def is_mobile():
 @app.route('/about')
 def about_me():
     if is_mobile():
-        return render_template('aboute-mobile.html')
+        return render_template('aboutme-mobile.html')
     else:
         return render_template('aboutme.html')
 @app.route('/projects')
