@@ -15,9 +15,11 @@ body {
     top: 20px;        /* instead of margin */
     left: 20px;       /* instead of margin */
         position: fixed;
+    background-color: rgba(0, 0, 0, 0);
+    color: #eb5757;
     font-size: 28px;
     border: none;
-    padding: 30px 35px;
+    padding: 38px 43px;
     border-radius: 20px;;
     cursor: pointer;
     z-index: 1001;        /* higher than the sidebar */
@@ -30,18 +32,7 @@ body {
 }
 
 /* Sidebar stays unblurred */
-.sidebar {
-    position: fixed;
-    padding-top:120px;
-    top: 0;
-    left: -360px;
-    width: 350px;
-    height: 100vh;
-    background-color: #090909;
-    transition: left 0.3s ease;
-    z-index: 9999;
-    border-right: 5px solid #eb5757;
-}
+
 
 
 .sidebar {
@@ -51,7 +42,7 @@ body {
     left: -360px;  /* hidden by default */
     width: 350px;
     height: 100vh;
-    background-color: #090909;
+    background-color: #000000;
     transition: left 0.3s ease;
     z-index: 99;
     border-right: 5px solid #eb5757;;   /* <— this is the correct line */}
