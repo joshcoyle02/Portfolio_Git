@@ -10,19 +10,29 @@
     margin: 100px 100px 0px 100px;
 }
 
+.career,
+.education {
+    flex: 1;        /* makes them equal width */
+}
+
 .career{
     /*background-color: #070707;*/
-    background-color: #393939;
+    background-color: #101010;
     padding: 0px 20px 0px 20px;
     border-radius: 20px;
+    line-height: 1.6;
+    font-size:20px;
 
 }
 
 .education{
     /*background-color: #070707;*/
-    background-color: #393939;
+    background-color: #101010;
     padding: 0px 20px 0px 20px;
     border-radius: 20px;
+    line-height: 1.6;
+    font-size:20px;
+
 
 }
 
