@@ -1,0 +1,68 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Ubuntu;
+}
+
+.form {
+    display: flex;
+    flex-direction: column; /* vertical stacking */
+    align-items: stretch;    /* make children fill available width */
+    min-height: 100vh;      /* ensures the container fills the viewport height */
+    box-sizing: border-box;
+    padding: 1rem;
+    width: 100%;
+    max-width: 800px;       /* optional: limit form width */
+    margin: 150px auto;         /* keeps the max-width centered on narrow screens */
+}
+
+/* Make labels and controls stack vertically and span full width */
+.form label {
+    display: block;
+    margin-bottom: 0.25rem;
+    text-align: left;
+    width: 100%;
+}
+
+.form input,
+.form textarea,
+.form select,
+.form button {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+#email {
+    padding:10px 20px 10px 20px;
+    border-radius: 20px;
+}
+
+#message {
+    padding:10px 20px 10px 20px;
+    height:150px;
+    resize: vertical; /* allow vertical resizing */
+    border-radius: 20px;
+
+}
+
+/* Optional: reduce button height and center action */
+.form button {
+    max-width: 200px;
+    margin-left: 0; /* keep left-aligned inside stretched container */
+    align-self: flex-start; /* place button at start if you want it not to stretch */
+    padding:10px 20px 10px 20px;
+    border-radius: 20px;
+    
+
+}
+
+#message, #email, button {
+    font-size: 18px;   /* change this to whatever you want */
+    font-family: "ubuntu";
+}
+
+::placeholder {
+    font-size: 18px;   /* change this to whatever you want */
+}

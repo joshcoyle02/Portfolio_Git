@@ -1,8 +1,10 @@
 .sec-1-asp {
-    display: flex;
+    /* display: flex; */
     align-items: center;
-    margin: 80px 100px 0px 100px;
+    margin: 80px 80px 20px 50px;
     gap:40px;
+    height:400px;
+
 
 }
 
@@ -17,21 +19,31 @@
 
 .career{
     /*background-color: #070707;*/
-    background-color: #101010;
-    padding: 0px 20px 0px 20px;
+    background-color: #070707;
+    padding: 20px 20px 20px 20px;
     border-radius: 20px;
     line-height: 1.6;
     font-size:20px;
+    width:100%;
+}
 
+.career h2 {
+    color:#f2c94c
+}
+
+.education h2 {
+    color:#6fcf97;
 }
 
 .education{
     /*background-color: #070707;*/
-    background-color: #101010;
-    padding: 0px 20px 0px 20px;
+    margin-top:30px;
+    background-color: #070707;
+    padding: 20px 20px 20px 20px;
     border-radius: 20px;
     line-height: 1.6;
     font-size:20px;
+    width:100%;
 
 
 }
