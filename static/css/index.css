@@ -29,17 +29,15 @@ body {
     flex-direction: column;
 }
 
-/* ---------- Header (Tighter) ---------- */
+/* ---------- Header ---------- */
 header {
     flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     
-    /* Reduced padding to bring it closer to the hero */
-    padding: 1.5vh 5%; 
+    padding: 2vh 5%; 
     position: relative;
-    /* Removed fixed height to let content dictate size naturally */
     min-height: 8vh; 
 }
 
@@ -58,31 +56,30 @@ header {
     margin-left: auto;
 }
 
-/* ---------- Hero Section (Compacted) ---------- */
+/* ---------- Hero Section (Closer Together) ---------- */
 .hero-container {
-    /* Takes up remaining space, but centered */
     flex: 1; 
     display: flex;
-    justify-content: space-between;
-    align-items: center; 
-    padding: 0 10%;
     
-    /* Reduced gap between Text and Image */
-    gap: 20px; 
+    /* CHANGE 1: Use 'center' instead of 'space-between' to pull them inward */
+    justify-content: center; 
+    align-items: center; 
+    
+    padding: 0 5%;
+    
+    /* CHANGE 2: Fixed gap brings them closer than percentage padding */
+    gap: 60px; 
 }
 
 .hero {
-    flex: 1;
-    /* Pull text slightly higher visually */
+    /* Limit width so text doesn't stretch too far */
+    flex: 0 1 600px; 
     margin-bottom: 2vh; 
 }
 
 .hero h1 {
-    /* Slightly smaller font to reduce vertical spread */
     font-size: 3rem; 
     line-height: 1.1;
-    
-    /* Tightened margins */
     margin-bottom: 10px; 
 }
 
@@ -90,8 +87,6 @@ header {
 .desktop-only {
     font-size: 1.1rem;
     color: var(--color-text-muted);
-    
-    /* Tightened margins */
     margin-top: 10px; 
     line-height: 1.5;
 }
@@ -103,9 +98,10 @@ header {
 
 /* Image Styling */
 .picture {
-    flex: 1;
+    /* Limit width so image stays close to text */
+    flex: 0 1 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start; /* Aligns image to the left (closer to text) */
     align-items: center;
     height: 100%;
 }
@@ -114,7 +110,6 @@ header {
     width: auto;
     height: auto;
     max-width: 100%;
-    /* Reduced max-height so it doesn't push the layout too wide vertically */
     max-height: 45vh; 
     
     border-radius: 30px;
@@ -122,18 +117,18 @@ header {
     object-fit: contain;
 }
 
-/* ---------- Buttons Section (Moved Up) ---------- */
+/* ---------- Buttons Section (Sitting Higher) ---------- */
 .sec-2-wrapper {
     flex: 0 0 auto; 
     display: flex; 
     justify-content: center;
     align-items: center;
     
-    /* Reduced spacing between buttons slightly (was 40px) */
     gap: 30px; 
     
-    /* Reduced bottom padding significantly to pull buttons up */
-    padding: 0 5% 4vh 5%; 
+    /* CHANGE 3: Increased bottom padding drastically (was 4vh).
+       This pushes the buttons UP the screen. */
+    padding: 0 5% 12vh 5%; 
     width: 100%;
 }
 
@@ -227,6 +222,9 @@ header {
         min-width: 40%; 
         height: 60px; 
         font-size: 1rem;
+    }
+    .picture {
+        justify-content: center;
     }
     .picture img {
         max-height: 300px;
