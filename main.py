@@ -5,19 +5,14 @@ from flask import redirect, url_for
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 def is_mobile():
     user_agent = request.headers.get('User-Agent')
     mobile_keywords = ["iphone", "android", "ipad", "mobile", "opera mini", "blackberry"]
     return any(keyword in user_agent.lower() for keyword in mobile_keywords)
-
-
-@app.route('/')
-def index():
-    if is_mobile():
-        return render_template('mobile-templates/index-mobile.html')
-    else:
-        return render_template('index.html')
-
 
 @app.route('/about')
 def about_me():
