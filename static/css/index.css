@@ -20,11 +20,8 @@ body {
     font-family: var(--font-main);
     background-color: var(--bg-dark);
     color: var(--color-text-main);
-    
-    /* Forces page to fit screen exactly */
     height: 100vh; 
     overflow: hidden; 
-    
     display: flex;
     flex-direction: column;
 }
@@ -35,7 +32,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
     padding: 2vh 5%; 
     position: relative;
     min-height: 8vh; 
@@ -56,39 +52,39 @@ header {
     margin-left: auto;
 }
 
-/* ---------- Hero Section (Closer Together) ---------- */
+/* ---------- Hero Section (Big & Bold) ---------- */
 .hero-container {
     flex: 1; 
     display: flex;
-    
-    /* CHANGE 1: Use 'center' instead of 'space-between' to pull them inward */
     justify-content: center; 
     align-items: center; 
-    
     padding: 0 5%;
-    
-    /* CHANGE 2: Fixed gap brings them closer than percentage padding */
-    gap: 60px; 
+    gap: 50px; /* Slightly reduced gap to keep image/text tight */
 }
 
 .hero {
-    /* Limit width so text doesn't stretch too far */
-    flex: 0 1 600px; 
+    /* Increased max-width to accommodate bigger font */
+    flex: 0 1 700px; 
     margin-bottom: 2vh; 
 }
 
 .hero h1 {
-    font-size: 3rem; 
+    /* POP UPGRADE: Much larger headline */
+    font-size: 4.5rem; 
     line-height: 1.1;
-    margin-bottom: 10px; 
+    margin-bottom: 15px; 
+    font-weight: 700;
+    letter-spacing: -1px; /* Tight spacing makes big text look sleeker */
 }
 
 .hero p, 
 .desktop-only {
-    font-size: 1.1rem;
+    /* POP UPGRADE: Larger body text */
+    font-size: 1.3rem;
     color: var(--color-text-muted);
-    margin-top: 10px; 
-    line-height: 1.5;
+    margin-top: 15px; 
+    line-height: 1.6;
+    font-weight: 300;
 }
 
 #joshua { color: var(--color-cyan); }
@@ -98,10 +94,9 @@ header {
 
 /* Image Styling */
 .picture {
-    /* Limit width so image stays close to text */
     flex: 0 1 auto;
     display: flex;
-    justify-content: flex-start; /* Aligns image to the left (closer to text) */
+    justify-content: flex-start; 
     align-items: center;
     height: 100%;
 }
@@ -110,14 +105,14 @@ header {
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 45vh; 
+    max-height: 50vh; /* Allow image to be slightly larger too */
     
     border-radius: 30px;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
     object-fit: contain;
 }
 
-/* ---------- Buttons Section (Sitting Higher) ---------- */
+/* ---------- Buttons Section (Bigger & Higher) ---------- */
 .sec-2-wrapper {
     flex: 0 0 auto; 
     display: flex; 
@@ -125,10 +120,7 @@ header {
     align-items: center;
     
     gap: 30px; 
-    
-    /* CHANGE 3: Increased bottom padding drastically (was 4vh).
-       This pushes the buttons UP the screen. */
-    padding: 0 5% 12vh 5%; 
+    padding: 0 5% 12vh 5%; /* High bottom padding keeps buttons lifted */
     width: 100%;
 }
 
@@ -139,93 +131,105 @@ header {
     align-items: center;
     
     flex: 1; 
-    max-width: 260px; 
-    height: 65px;     
+    /* POP UPGRADE: Wider and Taller */
+    max-width: 300px; 
+    height: 80px;     
     
-    font-size: 1.15rem; 
-    font-weight: 400;
-    letter-spacing: 1px; 
+    /* POP UPGRADE: Bigger text */
+    font-size: 1.4rem; 
+    font-weight: 500; /* Slightly bolder */
+    letter-spacing: 1.5px; 
     text-decoration: none;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     
     background-color: rgba(255, 255, 255, 0.03); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     
-    border-width: 1px;
+    /* POP UPGRADE: Thicker border to make it stand out */
+    border-width: 2px;
     border-style: solid;
     border-radius: 50px;
     
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* Button Border Colors */
-#but1 { border-color: rgba(86, 204, 242, 0.4); } 
-#but2 { border-color: rgba(242, 201, 76, 0.4); } 
-#but3 { border-color: rgba(111, 207, 151, 0.4); } 
-#but4 { border-color: rgba(235, 87, 87, 0.4); } 
+#but1 { border-color: rgba(86, 204, 242, 0.6); } /* Brighter border base */
+#but2 { border-color: rgba(242, 201, 76, 0.6); } 
+#but3 { border-color: rgba(111, 207, 151, 0.6); } 
+#but4 { border-color: rgba(235, 87, 87, 0.6); } 
 
 /* Hover Effects */
 #but1:hover { 
     border-color: var(--color-cyan);
-    background-color: rgba(86, 204, 242, 0.1);
+    background-color: rgba(86, 204, 242, 0.15);
     color: #fff;
-    box-shadow: 0 0 20px rgba(86, 204, 242, 0.2);
-    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(86, 204, 242, 0.3); /* Stronger Glow */
+    transform: translateY(-5px);
 }
 
 #but2:hover { 
     border-color: var(--color-yellow);
-    background-color: rgba(242, 201, 76, 0.1);
+    background-color: rgba(242, 201, 76, 0.15);
     color: #fff;
-    box-shadow: 0 0 20px rgba(242, 201, 76, 0.2);
-    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(242, 201, 76, 0.3);
+    transform: translateY(-5px);
 }
 
 #but3:hover { 
     border-color: var(--color-green);
-    background-color: rgba(111, 207, 151, 0.1);
+    background-color: rgba(111, 207, 151, 0.15);
     color: #fff;
-    box-shadow: 0 0 20px rgba(111, 207, 151, 0.2);
-    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(111, 207, 151, 0.3);
+    transform: translateY(-5px);
 }
 
 #but4:hover { 
     border-color: var(--color-red);
-    background-color: rgba(235, 87, 87, 0.1);
+    background-color: rgba(235, 87, 87, 0.15);
     color: #fff;
-    box-shadow: 0 0 20px rgba(235, 87, 87, 0.2);
-    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(235, 87, 87, 0.3);
+    transform: translateY(-5px);
 }
 
 
-/* ---------- Mobile Safety ---------- */
+/* ---------- Mobile Safety (Prevents giant text breaking phone view) ---------- */
 @media (max-height: 600px), (max-width: 1200px) {
     body {
-        height: auto; /* Allow scrolling on small screens */
+        height: auto; 
         overflow-y: auto;
     }
+    
+    .hero h1 {
+        font-size: 3rem; /* Scale down for mobile */
+    }
+    
     .hero-container {
         flex-direction: column-reverse;
         text-align: center;
         padding: 40px 20px;
-        gap: 20px;
+        gap: 30px;
     }
+    
     .sec-2-wrapper {
         flex-wrap: wrap;
         gap: 15px;
         padding-bottom: 40px;
     }
+    
     [id^="but"] {
         min-width: 40%; 
-        height: 60px; 
-        font-size: 1rem;
+        height: 65px; /* Smaller buttons for mobile */
+        font-size: 1.1rem;
     }
+    
     .picture {
         justify-content: center;
     }
+    
     .picture img {
         max-height: 300px;
     }
