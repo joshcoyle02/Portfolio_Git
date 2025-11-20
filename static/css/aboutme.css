@@ -1,68 +1,141 @@
+/* ---------- Shared Variables ---------- */
+:root {
+    --color-gold: #f2c94c;
+    --color-red: #eb5757;
+    --bg-dark: #121212;       /* Main background */
+    --bg-card: #1a1a1a;       /* Slightly lighter for cards */
+    --border-color: #333333;
+    --font-main: 'Ubuntu', sans-serif;
+}
+
+body { 
+        background-color: var(--bg-dark); /* Ensure page background is dark */
+
+}
+
+/* ---------- Layout Container ---------- */
 .sec-container {
     display: flex;
-    align-items: center;       /* ✅ vertically align both items */
-    justify-content: space-between;
-    margin: 20px 100px 0px 100px;
-    gap: 15px;
-    min-height: 60vh;          /* ✅ ensures enough height for alignment */
+    align-items: center; 
+    justify-content: center;
+    gap: 50px; /* Increased gap for better breathing room */
+    
+    /* Responsive margins instead of fixed pixels */
+    margin: 5vh 10% 20px 10%; 
+    min-height: auto; /* Let content dictate height, easier for reading */
 }
 
-
-/* Left side (text) */
-.sec-1 {
-    margin: 0;                /* ✅ reset margins */
-    background-color: #070707;
-    padding:30px;
-    border-radius: 30px;
-
+/* ---------- The "Cards" (Sec-1 and Sec-3) ---------- */
+/* We give them a unified look: distinct dark cards */
+.sec-1, .sec-3 {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 40px;
+    
+    /* Subtle shadow for depth */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sec-1 h1{
-    font-weight: 200;
+/* Hover effect for interactivity */
+.sec-1:hover, .sec-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    border-color: #444;
 }
 
-.sec-1 p {
-    line-height: 1.6;
-    font-weight: 250;/* better readability */
-    font-size:18px;
+/* ---------- Typography ---------- */
+.sec-1 h1 {
+    font-weight: 300;
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+    letter-spacing: -1px;
 }
 
-/* Right side (image) */
-.sec-2 {
-    display: flex;
-    justify-content: flex-end;
-    background-color: #070707;
-    padding:20px;
-    border-radius: 30px;
+.sec-1 p, .sec-3 p {
+    line-height: 1.8; /* Increased for readability */
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #d0d0d0;   /* Soft white, easier on eyes than pure white */
+    margin: 0;
 }
 
-.sec-2 img {
-    width: 350px;                  /* adjust image size */
-    border-radius: 50%;
-    /*object-fit: cover;*/
-
-}
-
-#word1, #word2, #word3, #word4{
-    color: #eb5757;
-    font-weight: 400;
+/* ---------- Highlight Colors ---------- */
+#word1, #word2, #word3, #word4 {
+    color: var(--color-red);
+    font-weight: 500;
 }
 
 #A {
-    color: gold;
-    font-weight: 490;
+    color: var(--color-gold);
+    font-weight: 500;
 }
 
+/* ---------- Right Side (Image) ---------- */
+.sec-2 {
+    /* Removed background color so the image floats freely */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: transparent; 
+}
+
+.sec-2 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    
+    /* Sleek border ring */
+    border: 4px solid var(--bg-card);
+    
+    /* Glowing Shadow Effect matching your colors */
+    box-shadow: 0 0 30px rgba(235, 87, 87, 0.2); /* Subtle red glow */
+    transition: 0.5s ease;
+}
+
+.sec-2 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 50px rgba(242, 201, 76, 0.3); /* Gold glow on hover */
+    border-color: var(--color-gold);
+}
+
+/* ---------- Bottom Section (Sec-3) ---------- */
 .sec-3 {
-    margin:0 100px 0 100px;
-    padding:30px;
-    background-color: #070707;
-    border-radius: 30px;
-
+    /* Matches margins of the top container */
+    margin: 20px 10% 50px 10%;
+    
+    /* Add a colored accent line on the left */
+    border-left: 4px solid var(--color-gold); 
 }
 
-.sec-3 p {
-    line-height: 1.6;
-    font-weight: 250;/* better readability */
-    font-size:18px;
+
+/* ---------- Responsive Design ---------- */
+@media (max-width: 900px) {
+    .sec-container {
+        flex-direction: column-reverse; /* Text above image on mobile? Or Image top? */
+        margin: 30px 5%;
+        gap: 30px;
+    }
+
+    .sec-1 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sec-2 img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .sec-3 {
+        margin: 0 5% 50px 5%;
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid var(--color-gold); /* Move accent to top for mobile */
+    }
 }

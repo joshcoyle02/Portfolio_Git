@@ -1,68 +1,144 @@
+/* ---------- Variables (Matching your theme) ---------- */
+:root {
+    --color-cyan: #56ccf2;
+    --color-text-main: #ffffff;
+    --color-text-muted: #cfcfcf;
+    --bg-dark: #121212;
+    --bg-card: #1e1e1e; /* Slightly lighter than background */
+    --bg-input: #0a0a0a;
+    --font-main: 'Ubuntu', sans-serif;
+}
+
 html, body {
     height: 100%;
     margin: 0;
-    font-family: Ubuntu;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark); /* Ensure page background is dark */
+    color: var(--color-text-main);
 }
 
+/* ---------- Form Container (The Card) ---------- */
 .form {
     display: flex;
-    flex-direction: column; /* vertical stacking */
-    align-items: stretch;    /* make children fill available width */
-    min-height: 100vh;      /* ensures the container fills the viewport height */
-    box-sizing: border-box;
-    padding: 1rem;
-    width: 100%;
-    max-width: 800px;       /* optional: limit form width */
-    margin: 150px auto;         /* keeps the max-width centered on narrow screens */
+    flex-direction: column;
+    align-items: stretch;
+    
+    /* Centering & Sizing */
+    width: 90%;
+    max-width: 700px;
+    margin: 120px auto 50px auto; /* Responsive top margin */
+    padding: 50px;
+    
+    /* Glassy/Card Look */
+    background-color: var(--bg-card);
+    border-radius: 30px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); /* Deep shadow for depth */
+    border: 1px solid #333;
 }
 
-/* Make labels and controls stack vertically and span full width */
+/* ---------- Labels ---------- */
 .form label {
     display: block;
-    margin-bottom: 0.25rem;
-    text-align: left;
-    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Align with input curvature */
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.5px;
 }
 
+/* ---------- Inputs & Textarea ---------- */
 .form input,
 .form textarea,
-.form select,
-.form button {
+.form select {
     display: block;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 1rem;
-}
-
-#email {
-    padding:10px 20px 10px 20px;
-    border-radius: 20px;
-}
-
-#message {
-    padding:10px 20px 10px 20px;
-    height:150px;
-    resize: vertical; /* allow vertical resizing */
-    border-radius: 20px;
-
-}
-
-/* Optional: reduce button height and center action */
-.form button {
-    max-width: 200px;
-    margin-left: 0; /* keep left-aligned inside stretched container */
-    align-self: flex-start; /* place button at start if you want it not to stretch */
-    padding:10px 20px 10px 20px;
-    border-radius: 20px;
+    margin-bottom: 30px; /* More breathing room */
     
-
+    /* Input Styling */
+    background-color: var(--bg-input);
+    border: 2px solid #333;
+    color: white;
+    font-family: var(--font-main);
+    font-size: 18px;
+    
+    /* Roundness & Spacing */
+    border-radius: 20px;
+    padding: 15px 25px;
+    
+    /* Smooth Animation */
+    transition: all 0.3s ease;
+    outline: none; /* Remove default blue outline */
 }
 
-#message, #email, button {
-    font-size: 18px;   /* change this to whatever you want */
-    font-family: "ubuntu";
+/* Specific tweaks */
+#message {
+    height: 180px;
+    resize: vertical;
+    border-radius: 25px; /* Slightly more rounded for larger box */
 }
 
+/* Input Focus State (The Glow) */
+.form input:focus,
+.form textarea:focus {
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 15px rgba(86, 204, 242, 0.2); /* Cyan Glow */
+    background-color: #000;
+    transform: translateY(-2px);
+}
+
+/* Placeholder Text */
 ::placeholder {
-    font-size: 18px;   /* change this to whatever you want */
+    color: #666;
+    font-weight: 300;
+    font-size: 16px;
+    opacity: 1;
+}
+
+/* ---------- Submit Button ---------- */
+.form button {
+    width: 200px; /* Fixed width */
+    align-self: flex-start; /* Left align */
+    margin-top: 10px;
+    padding: 15px 30px;
+    
+    font-family: var(--font-main);
+    font-size: 18px;
+    font-weight: 700;
+    
+    color: var(--bg-dark);
+    background-color: var(--color-cyan);
+    border: none;
+    border-radius: 50px; /* Pill shape */
+    cursor: pointer;
+    
+    /* Animation */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(86, 204, 242, 0.3);
+}
+
+/* Button Hover */
+.form button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(86, 204, 242, 0.5);
+    background-color: #fff; /* Flash white on hover */
+}
+
+/* Button Active (Click) */
+.form button:active {
+    transform: translateY(-1px);
+}
+
+/* ---------- Mobile Responsiveness ---------- */
+@media (max-width: 600px) {
+    .form {
+        padding: 30px 20px;
+        margin-top: 100px;
+        width: 95%;
+    }
+    
+    .form button {
+        width: 100%; /* Full width button on phone is easier to tap */
+    }
 }

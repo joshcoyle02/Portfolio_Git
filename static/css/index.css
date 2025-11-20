@@ -1,163 +1,179 @@
-/* ---------- Header Layout ---------- */
+/* ---------- Root Variables ---------- */
+:root {
+    --color-cyan: #56ccf2;
+    --color-yellow: #f2c94c;
+    --color-green: #6fcf97;
+    --color-red: #eb5757;
+    --color-text-main: #ffffff;
+    --color-text-muted: #cfcfcf;
+    --bg-dark: #121212;
+    --font-main: 'Ubuntu', sans-serif;
+}
 
+* {
+    box-sizing: border-box;
+}
 
-/* Center name precisely */
+/* 1. Lock the Body Height */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--color-text-main);
+    
+    /* This forces the page to be exactly the screen height */
+    height: 100vh; 
+    overflow: hidden; 
+    
+    /* Organizes Header, Hero, and Buttons vertically */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Header (Fixed Height) ---------- */
+header {
+    flex: 0 0 auto; /* Don't grow or shrink */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 5%; /* Reduced padding to save vertical space */
+    position: relative;
+    height: 10vh; /* Occupies top 10% of screen */
+}
+
 #name {
+    font-size: 2rem; 
+    font-weight: 700;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 35px;
-    margin: 0;
-    font-weight: 700;
+    white-space: nowrap;
 }
 
-/* Right-aligned details */
 #details {
-    font-size: 17px;
-    font-weight: 400;
-    margin: 0;
-    text-align: left;
-    color: #cfcfcf;
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-left: auto;
 }
 
-
-
-
-
+/* ---------- Hero Section (Flexible Height) ---------- */
 .hero-container {
-    display: flex;
-    justify-content: space-between;  /* space text and image apart */
-    align-items: center;              /* vertically align them */
-    padding: 40px;
-    gap: 40px;
-    }
-
-.hero {
-    /*margin-top:100px;*/
-    width: 50%;
-
-
-}
-
-.hero h1{
-    margin-left:100px;
-    font-size:45px;
-}
-
-#joshua { color: #56ccf2; }
-#bold { color: #f2c94c; font-weight: 500; }
-#bold2 { color: #6fcf97; font-weight: 500; }
-#bold3 { color: #eb5757; font-weight: 500; }
-
-#bold, #bold2, #bold3 {
-    font-weight: normal;
-}
-
- .hero p {
-     font-size:20px;
-     margin-left:100px;
-     font-weight: lighter;
-
- }
-
- .desktop-only{
-     display: block;
-  font-size:20px;
-     margin-left:100px;
-     font-weight: lighter;
- }
-
- .picture {
-     justify-content: right;
-
- }
-
- .picture img {
-    height: 400px;
-     width: 400px;
-     border-radius: 10%;
-     margin-right:200px;
-     /*margin-righttop: 100px;*/
-     box-shadow: 0 0 0px #393939;
- }
-
- /******************************/
-
-.sec-2-wrapper{
+    /* This takes up all remaining space between Header and Buttons */
+    flex: 1; 
+    
     display: flex;
     justify-content: space-between;
-    gap: 80px;
-    padding: 50px;
-    margin: 30px 120px 0px 120px;
-    color:white;
+    align-items: center; /* Vertically center the content */
+    padding: 0 10%;
+    gap: 40px;
 }
 
-.sec-2-wrapper h1 {
-    font-size:25px;
+.hero {
+    flex: 1;
 }
 
-.sec-2-wrapper button {
-    /*padding: 25px 65px 35px 65px;*/
-    width: 600px;
-    height:80px;
-    font-family: ubuntu;
-    font-size:20px;
-
-    border-radius: 25px;
-    border: none;
-    transition: 0.8s;
+.hero h1 {
+    font-size: 3.5rem; /* adjust to 4vw if you want it to scale with width */
+    line-height: 1.1;
+    margin-bottom: 1vh;
 }
 
-.sec-2-wrapper a{
+.hero p, 
+.desktop-only {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin-top: 1.5vh;
+}
+
+#joshua { color: var(--color-cyan); }
+#bold   { color: var(--color-yellow); font-weight: 500; }
+#bold2  { color: var(--color-green);  font-weight: 500; }
+#bold3  { color: var(--color-red);    font-weight: 500; }
+
+/* Image Styling - Constrained to fit screen */
+.picture {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+}
+
+.picture img {
+    /* Responsive sizing logic */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 50vh; /* Never taller than 50% of the screen height */
+    
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+/* ---------- Buttons Section (Fixed Bottom) ---------- */
+.sec-2-wrapper {
+    flex: 0 0 auto; /* Don't shrink */
+    
+    display: flex; /* Use Flex instead of Grid to keep them in one low-profile line */
+    justify-content: center;
+    gap: 20px;
+    padding: 0 5% 5vh 5%; /* Padding bottom ensures it sits nicely */
+    width: 100%;
+}
+
+/* Base Button Style */
+[id^="but"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Buttons share width equally */
+    flex: 1; 
+    max-width: 250px; /* Stop them from getting comically wide */
+    height: 60px; /* Reduced height slightly for compact view */
+    
+    font-size: 1.1rem;
     text-decoration: none;
     color: white;
+    background-color: transparent;
+    border-radius: 15px;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-#but1, #but2, #but3, #but4 {
-    font-weight: lighter;
-    color: white;
-    width: 400px;
-    height: 100px;
-    align-content: center;
-    text-align: center;
-    font-size: 25px;
-    border-radius: 30px;
-    transition: 0.5s;
-    background-color: black;
-    border: 2px solid #eb5757;}
+/* Button Colors */
+#but1 { border: 2px solid var(--color-cyan); }
+#but2 { border: 2px solid var(--color-yellow); }
+#but3 { border: 2px solid var(--color-green); }
+#but4 { border: 2px solid var(--color-red); }
+
+/* Hover Effects */
+#but1:hover { background-color: var(--color-cyan); color: #000; transform: translateY(-5px); }
+#but2:hover { background-color: var(--color-yellow); color: #000; transform: translateY(-5px); }
+#but3:hover { background-color: var(--color-green); color: #000; transform: translateY(-5px); }
+#but4:hover { background-color: var(--color-red); color: white; transform: translateY(-5px); }
 
 
-
-
-#but1 {
-    border: 3px solid #56ccf2;
-    transition: 0.8s}
-#but1:hover {
-    background-color:#56ccf2;
-    transition: 0.8s;
-
+/* ---------- Mobile Safety ---------- */
+/* If the screen is too small vertically (like a phone landscape), allow scroll */
+@media (max-height: 600px), (max-width: 900px) {
+    body {
+        height: auto;
+        overflow-y: auto; /* Re-enable scroll on small devices */
+    }
+    
+    .hero-container {
+        flex-direction: column-reverse;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .sec-2-wrapper {
+        flex-wrap: wrap;
+        padding-bottom: 40px;
+    }
+    
+    [id^="but"] {
+        min-width: 45%; /* 2 buttons per row on mobile */
+    }
 }
- #but2 {
-     border: 3px solid #f2c94c;
-     transition: 0.8s;
- }
- #but2:hover {
-    background-color:#f2c94c;
-    transition: 0.8s;
-}
-#but3 {
-     border: 3px solid #6fcf97;
-    transition: 0.8s;}
-
- #but3:hover {
-    background-color:#6fcf97;
-    transition: 0.8s;
-}
-#but4 {
-     border: 3px solid #eb5757;
-    transition: 0.8s;}
- #but4:hover {
-    background-color:#eb5757;
-    transition: 0.8s;}
-
-

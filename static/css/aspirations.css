@@ -1,50 +1,94 @@
+/* ---------- Container Layout ---------- */
 .sec-1-asp {
-    /* display: flex; */
-    align-items: center;
-    margin: 80px 80px 20px 50px;
-    gap:40px;
-    height:400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 40px; /* Space between the cards */
+    
+    /* Consistent spacing with previous sections */
+    margin: 50px 10%; 
+    padding-bottom: 50px;
+    height: auto; /* Removed fixed 400px height so content fits */
+}
 
+body { 
+        background-color: var(--bg-dark); /* Ensure page background is dark */
 
 }
 
+/* ---------- Main Header (#myasp) ---------- */
 #myasp {
-    margin: 100px 100px 0px 100px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 80px 0 40px 0; /* Clean vertical spacing */
+    color: white;
+    letter-spacing: -1px;
 }
 
+/* ---------- Shared Card Styles ---------- */
+/* We combine common styles to keep code clean */
 .career,
 .education {
-    flex: 1;        /* makes them equal width */
-}
-
-.career{
-    /*background-color: #070707;*/
-    background-color: #070707;
-    padding: 20px 20px 20px 20px;
+    background-color: #1a1a1a; /* Sleek dark grey, not pitch black */
+    padding: 40px;
     border-radius: 20px;
-    line-height: 1.6;
-    font-size:20px;
-    width:100%;
+    border: 1px solid #333;    /* Subtle border definition */
+    
+    /* Typography */
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #d0d0d0;            /* Soft white text */
+    font-weight: 300;
+    
+    /* Animation */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.career h2 {
-    color:#f2c94c
-}
-
+/* Headers inside the cards */
+.career h2, 
 .education h2 {
-    color:#6fcf97;
+    margin-top: 0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
 }
 
-.education{
-    /*background-color: #070707;*/
-    margin-top:30px;
-    background-color: #070707;
-    padding: 20px 20px 20px 20px;
-    border-radius: 20px;
-    line-height: 1.6;
-    font-size:20px;
-    width:100%;
+/* ---------- Specific Colors & Glows ---------- */
 
-
+/* Career Card - Gold Theme */
+.career h2 {
+    color: #f2c94c;
 }
 
+.career:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px rgba(242, 201, 76, 0.1); /* Subtle Gold Glow */
+    border-color: #f2c94c;
+}
+
+/* Education Card - Green Theme */
+.education h2 {
+    color: #6fcf97;
+}
+
+.education:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px rgba(111, 207, 151, 0.1); /* Subtle Green Glow */
+    border-color: #6fcf97;
+}
+
+/* ---------- Mobile Responsiveness ---------- */
+@media (max-width: 768px) {
+    .sec-1-asp {
+        margin: 30px 5%;
+        gap: 20px;
+    }
+    
+    .career, .education {
+        padding: 30px;
+    }
+    
+    #myasp {
+        font-size: 2rem;
+        margin: 50px 0 30px 0;
+    }
+}
