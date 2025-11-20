@@ -14,7 +14,7 @@ def is_mobile():
 @app.route('/')
 def index():
     if is_mobile():
-        return render_template('index-mobile.html')
+        return render_template('mobile-templates/index-mobile.html')
     else:
         return render_template('index.html')
 
