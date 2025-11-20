@@ -21,24 +21,26 @@ body {
     background-color: var(--bg-dark);
     color: var(--color-text-main);
     
-    /* This forces the page to be exactly the screen height */
+    /* Forces page to fit screen exactly */
     height: 100vh; 
     overflow: hidden; 
     
-    /* Organizes Header, Hero, and Buttons vertically */
     display: flex;
     flex-direction: column;
 }
 
-/* ---------- Header (Fixed Height) ---------- */
+/* ---------- Header (Tighter) ---------- */
 header {
-    flex: 0 0 auto; /* Don't grow or shrink */
+    flex: 0 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2vh 5%; /* Reduced padding to save vertical space */
+    
+    /* Reduced padding to bring it closer to the hero */
+    padding: 1.5vh 5%; 
     position: relative;
-    height: 10vh; /* Occupies top 10% of screen */
+    /* Removed fixed height to let content dictate size naturally */
+    min-height: 8vh; 
 }
 
 #name {
@@ -56,33 +58,42 @@ header {
     margin-left: auto;
 }
 
-/* ---------- Hero Section (Flexible Height) ---------- */
+/* ---------- Hero Section (Compacted) ---------- */
 .hero-container {
-    /* This takes up all remaining space between Header and Buttons */
+    /* Takes up remaining space, but centered */
     flex: 1; 
-    
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Vertically center the content */
+    align-items: center; 
     padding: 0 10%;
-    gap: 40px;
+    
+    /* Reduced gap between Text and Image */
+    gap: 20px; 
 }
 
 .hero {
     flex: 1;
+    /* Pull text slightly higher visually */
+    margin-bottom: 2vh; 
 }
 
 .hero h1 {
-    font-size: 3.5rem; /* adjust to 4vw if you want it to scale with width */
+    /* Slightly smaller font to reduce vertical spread */
+    font-size: 3rem; 
     line-height: 1.1;
-    margin-bottom: 1vh;
+    
+    /* Tightened margins */
+    margin-bottom: 10px; 
 }
 
 .hero p, 
 .desktop-only {
     font-size: 1.1rem;
     color: var(--color-text-muted);
-    margin-top: 1.5vh;
+    
+    /* Tightened margins */
+    margin-top: 10px; 
+    line-height: 1.5;
 }
 
 #joshua { color: var(--color-cyan); }
@@ -90,7 +101,7 @@ header {
 #bold2  { color: var(--color-green);  font-weight: 500; }
 #bold3  { color: var(--color-red);    font-weight: 500; }
 
-/* Image Styling - Constrained to fit screen */
+/* Image Styling */
 .picture {
     flex: 1;
     display: flex;
@@ -100,25 +111,29 @@ header {
 }
 
 .picture img {
-    /* Responsive sizing logic */
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 50vh; /* Never taller than 50% of the screen height */
+    /* Reduced max-height so it doesn't push the layout too wide vertically */
+    max-height: 45vh; 
     
     border-radius: 30px;
     box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
     object-fit: contain;
 }
 
-/* ---------- Buttons Section (Fixed Bottom) ---------- */
+/* ---------- Buttons Section (Moved Up) ---------- */
 .sec-2-wrapper {
-    flex: 0 0 auto; /* Don't shrink */
-    
-    display: flex; /* Use Flex instead of Grid to keep them in one low-profile line */
+    flex: 0 0 auto; 
+    display: flex; 
     justify-content: center;
-    gap: 20px;
-    padding: 0 5% 5vh 5%; /* Padding bottom ensures it sits nicely */
+    align-items: center;
+    
+    /* Reduced spacing between buttons slightly (was 40px) */
+    gap: 30px; 
+    
+    /* Reduced bottom padding significantly to pull buttons up */
+    padding: 0 5% 4vh 5%; 
     width: 100%;
 }
 
@@ -128,52 +143,98 @@ header {
     justify-content: center;
     align-items: center;
     
-    /* Buttons share width equally */
     flex: 1; 
-    max-width: 250px; /* Stop them from getting comically wide */
-    height: 60px; /* Reduced height slightly for compact view */
+    max-width: 260px; 
+    height: 65px;     
     
-    font-size: 1.1rem;
+    font-size: 1.15rem; 
+    font-weight: 400;
+    letter-spacing: 1px; 
     text-decoration: none;
-    color: white;
-    background-color: transparent;
-    border-radius: 15px;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    color: rgba(255, 255, 255, 0.9);
+    
+    background-color: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50px;
+    
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Button Colors */
-#but1 { border: 2px solid var(--color-cyan); }
-#but2 { border: 2px solid var(--color-yellow); }
-#but3 { border: 2px solid var(--color-green); }
-#but4 { border: 2px solid var(--color-red); }
+/* Button Border Colors */
+#but1 { border-color: rgba(86, 204, 242, 0.4); } 
+#but2 { border-color: rgba(242, 201, 76, 0.4); } 
+#but3 { border-color: rgba(111, 207, 151, 0.4); } 
+#but4 { border-color: rgba(235, 87, 87, 0.4); } 
 
 /* Hover Effects */
-#but1:hover { background-color: var(--color-cyan); color: #000; transform: translateY(-5px); }
-#but2:hover { background-color: var(--color-yellow); color: #000; transform: translateY(-5px); }
-#but3:hover { background-color: var(--color-green); color: #000; transform: translateY(-5px); }
-#but4:hover { background-color: var(--color-red); color: white; transform: translateY(-5px); }
+#but1:hover { 
+    border-color: var(--color-cyan);
+    background-color: rgba(86, 204, 242, 0.1);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(86, 204, 242, 0.2);
+    transform: translateY(-4px);
+}
+
+#but2:hover { 
+    border-color: var(--color-yellow);
+    background-color: rgba(242, 201, 76, 0.1);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(242, 201, 76, 0.2);
+    transform: translateY(-4px);
+}
+
+#but3:hover { 
+    border-color: var(--color-green);
+    background-color: rgba(111, 207, 151, 0.1);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(111, 207, 151, 0.2);
+    transform: translateY(-4px);
+}
+
+#but4:hover { 
+    border-color: var(--color-red);
+    background-color: rgba(235, 87, 87, 0.1);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(235, 87, 87, 0.2);
+    transform: translateY(-4px);
+}
 
 
 /* ---------- Mobile Safety ---------- */
-/* If the screen is too small vertically (like a phone landscape), allow scroll */
-@media (max-height: 600px), (max-width: 900px) {
+@media (max-height: 600px), (max-width: 1200px) {
     body {
-        height: auto;
-        overflow-y: auto; /* Re-enable scroll on small devices */
+        height: auto; /* Allow scrolling on small screens */
+        overflow-y: auto;
     }
-    
     .hero-container {
         flex-direction: column-reverse;
-        padding: 40px 20px;
         text-align: center;
+        padding: 40px 20px;
+        gap: 20px;
     }
-    
     .sec-2-wrapper {
         flex-wrap: wrap;
+        gap: 15px;
         padding-bottom: 40px;
     }
-    
     [id^="but"] {
-        min-width: 45%; /* 2 buttons per row on mobile */
+        min-width: 40%; 
+        height: 60px; 
+        font-size: 1rem;
+    }
+    .picture img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    [id^="but"] {
+        min-width: 100%;
     }
 }
