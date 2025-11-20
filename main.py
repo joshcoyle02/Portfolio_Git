@@ -7,7 +7,10 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    if is_mobile():
+        return render_template('index-mobile.html')
+    else:
+        return render_template('index.html')
 
 def is_mobile():
     user_agent = request.headers.get('User-Agent')
