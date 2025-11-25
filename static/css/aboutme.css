@@ -1,0 +1,146 @@
+/* ---------- Variables (Matched to Contact Page) ---------- */
+:root {
+    --color-cyan: #56ccf2;       /* The main accent color */
+    --color-text-main: #ffffff;
+    --color-text-muted: #cfcfcf;
+    --bg-dark: #121212;          /* Main page background */
+    --bg-card: #1e1e1e;          /* Card background */
+    --border-color: #333333;
+    --font-main: 'Ubuntu', sans-serif;
+}
+
+/* Global Reset */
+body { 
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--color-text-main);
+    line-height: 1.6;
+}
+
+/* ---------- Layout Container ---------- */
+.sec-container {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 50px; 
+    
+    /* Margins to position it nicely on the screen */
+    max-width: 1200px;
+    margin: 80px auto 40px auto; 
+    padding: 0 20px;
+}
+
+/* ---------- The "Cards" (Text Sections) ---------- */
+.sec-1, .sec-3 {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    
+    /* 30px Radius to match Contact Form */
+    border-radius: 30px; 
+    padding: 40px 50px;
+    
+    /* Deep shadow for depth (Matching Contact Form) */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+}
+
+/* Hover effect */
+.sec-1:hover, .sec-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    border-color: #555;
+}
+
+/* ---------- Typography ---------- */
+.sec-1 h1 {
+    font-weight: 700; /* Bolder header */
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--color-text-main);
+    letter-spacing: -1px;
+}
+
+.sec-1 p, .sec-3 p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    margin: 0;
+}
+
+/* ---------- Highlight Colors (Changed from Gold/Red to Cyan) ---------- */
+/* These target the specific <span> IDs in your HTML */
+#word1, #word2, #word3, #word4, #A {
+    color: var(--color-cyan);
+    font-weight: 500;
+    text-shadow: 0 0 10px rgba(86, 204, 242, 0.2); /* Subtle glowing text */
+}
+
+/* ---------- Right Side (Image) ---------- */
+.sec-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevents image from squishing */
+}
+
+.sec-2 img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%; /* Circular */
+    object-fit: cover;
+    
+    /* Border matches card background to blend edges */
+    border: 5px solid var(--bg-card);
+    
+    /* Cyan Glow Effect */
+    box-shadow: 0 0 30px rgba(86, 204, 242, 0.2); 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.sec-2 img:hover {
+    transform: scale(1.05);
+    /* Stronger Cyan glow on hover */
+    box-shadow: 0 0 60px rgba(86, 204, 242, 0.4); 
+    border-color: var(--color-cyan);
+}
+
+/* ---------- Bottom Section (Sec-3) ---------- */
+.sec-3 {
+    max-width: 1200px;
+    margin: 0 auto 80px auto; /* Centered with bottom spacing */
+    width: calc(100% - 40px); /* Full width minus padding */
+    box-sizing: border-box;
+    
+    /* Cyan accent line on the left */
+    border-left: 4px solid var(--color-cyan); 
+}
+
+/* ---------- Mobile Responsiveness ---------- */
+@media (max-width: 900px) {
+    .sec-container {
+        flex-direction: column-reverse; /* Image on top, text below */
+        margin-top: 40px;
+        gap: 40px;
+    }
+
+    .sec-1 {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .sec-2 img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .sec-3 {
+        text-align: center;
+        border-left: none;
+        border-top: 4px solid var(--color-cyan); /* Accent moves to top */
+        padding: 30px;
+        margin-bottom: 50px;
+    }
+}

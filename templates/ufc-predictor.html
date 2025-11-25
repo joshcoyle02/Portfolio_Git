@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/ufc-predictor.css">
+
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+
+</head>
+<body>
+
+        <!-- Header -->
+    <div class="header">
+        <h2 id="details">
+            <a href="https://www.linkedin.com/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            |
+            <a href="https://github.com/" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+        </h2>
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('about_me') }}">About me</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('aspirations') }}">Aspirations</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('contactme') }}">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+    <h1>UFC Predictor</h1>
+    <form action="/ufc-predictor" method="post">
+        <label for="fighter_A">Fighter A:</label>
+        <select id="fighter_A" name="fighter_A" required>
+            <option value="">Select Fighter</option>
+            {% for fighter in fighters %}
+            <option value="{{ fighter }}">{{ fighter }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="fighter_B">Fighter B:</label>
+        <select id="fighter_B" name="fighter_B" required>
+            <option value="">Select Fighter</option>
+            {% for fighter in fighters %}
+            <option value="{{ fighter }}">{{ fighter }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="prediction-result">
+            <h2>Prediction Result</h2>
+            {% if prediction.winner %}
+                <p><strong>Winner:</strong> {{ prediction.winner }}</p>
+                <p><strong>Confidence:</strong> {{ prediction.confidence }}</p>
+            {% elif prediction.error %}
+                <p style="color: red;"><strong>Error:</strong> {{ prediction.error }}</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fighter_A').select2();
+            $('#fighter_B').select2();
+        });
+    </script>
+</body>
+</html>

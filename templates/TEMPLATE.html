@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About me</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/aboutme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="header">
+
+        <h2 id="details">
+            <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            |
+            <a href="https://www.linkedin.com/in/joshua-coyle-6560521a4?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2FXr1h6sqQuCWMBBa3qzkWQ%3D%3D" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+        </h2>
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                |
+                <li><a href="{{ url_for('index') }}">Projects & Skills</a></li>
+                |
+                <li><a href="{{ url_for('index') }}">Aspirations</a></li>
+                |
+                <li><a href="{{ url_for('index') }}">Contact Me</a></li>
+            </ul>
+
+            </div>
+        </div>
+
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* ---------- Root Variables ---------- */
+:root {
+    --color-cyan: #56ccf2;
+    --color-yellow: #f2c94c;
+    --color-green: #6fcf97;
+    --color-red: #eb5757;
+    --color-text-main: #ffffff;
+    --color-text-muted: #cfcfcf;
+    --bg-dark: #121212;
+    --font-main: 'Ubuntu', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* 1. Lock the Body Height */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--color-text-main);
+    height: 100vh; 
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vh 5%; 
+    position: relative;
+    min-height: 8vh; 
+}
+
+#name {
+    font-size: 2rem; 
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+#details {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-left: auto;
+}
+
+/* ---------- Hero Section (Big & Bold) ---------- */
+.hero-container {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 0 5%;
+    gap: 50px; /* Slightly reduced gap to keep image/text tight */
+}
+
+.hero {
+    /* Increased max-width to accommodate bigger font */
+    flex: 0 1 700px; 
+    margin-bottom: 2vh; 
+}
+
+.hero h1 {
+    /* POP UPGRADE: Much larger headline */
+    font-size: 4.5rem; 
+    line-height: 1.1;
+    margin-bottom: 15px; 
+    font-weight: 700;
+    letter-spacing: -1px; /* Tight spacing makes big text look sleeker */
+}
+
+.hero p, 
+.desktop-only {
+    /* POP UPGRADE: Larger body text */
+    font-size: 1.3rem;
+    color: var(--color-text-muted);
+    margin-top: 15px; 
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+#joshua { color: var(--color-cyan); }
+#bold   { color: var(--color-yellow); font-weight: 500; }
+#bold2  { color: var(--color-green);  font-weight: 500; }
+#bold3  { color: var(--color-red);    font-weight: 500; }
+
+/* Image Styling */
+.picture {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100%;
+}
+
+.picture img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 50vh; /* Allow image to be slightly larger too */
+    
+    border-radius: 30px;
+    box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+/* ---------- Buttons Section (Bigger & Higher) ---------- */
+.sec-2-wrapper {
+    flex: 0 0 auto; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    
+    gap: 30px; 
+    padding: 0 5% 12vh 5%; /* High bottom padding keeps buttons lifted */
+    width: 100%;
+}
+
+/* Base Button Style */
+[id^="but"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex: 1; 
+    /* POP UPGRADE: Wider and Taller */
+    max-width: 300px; 
+    height: 80px;     
+    
+    /* POP UPGRADE: Bigger text */
+    font-size: 1.4rem; 
+    font-weight: 500; /* Slightly bolder */
+    letter-spacing: 1.5px; 
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.95);
+    
+    background-color: rgba(255, 255, 255, 0.03); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
+    /* POP UPGRADE: Thicker border to make it stand out */
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 50px;
+    
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+/* Button Border Colors */
+#but1 { border-color: rgba(86, 204, 242, 0.6); } /* Brighter border base */
+#but2 { border-color: rgba(242, 201, 76, 0.6); } 
+#but3 { border-color: rgba(111, 207, 151, 0.6); } 
+#but4 { border-color: rgba(235, 87, 87, 0.6); } 
+
+/* Hover Effects */
+#but1:hover { 
+    border-color: var(--color-cyan);
+    background-color: rgba(86, 204, 242, 0.15);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(86, 204, 242, 0.3); /* Stronger Glow */
+    transform: translateY(-5px);
+}
+
+#but2:hover { 
+    border-color: var(--color-yellow);
+    background-color: rgba(242, 201, 76, 0.15);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(242, 201, 76, 0.3);
+    transform: translateY(-5px);
+}
+
+#but3:hover { 
+    border-color: var(--color-green);
+    background-color: rgba(111, 207, 151, 0.15);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(111, 207, 151, 0.3);
+    transform: translateY(-5px);
+}
+
+#but4:hover { 
+    border-color: var(--color-red);
+    background-color: rgba(235, 87, 87, 0.15);
+    color: #fff;
+    box-shadow: 0 0 25px rgba(235, 87, 87, 0.3);
+    transform: translateY(-5px);
+}
+
+
+/* ---------- Mobile Safety (Prevents giant text breaking phone view) ---------- */
+@media (max-height: 600px), (max-width: 1200px) {
+    body {
+        height: auto; 
+        overflow-y: auto;
+    }
+    
+    .hero h1 {
+        font-size: 3rem; /* Scale down for mobile */
+    }
+    
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    
+    .sec-2-wrapper {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding-bottom: 40px;
+    }
+    
+    [id^="but"] {
+        min-width: 40%; 
+        height: 65px; /* Smaller buttons for mobile */
+        font-size: 1.1rem;
+    }
+    
+    .picture {
+        justify-content: center;
+    }
+    
+    .picture img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 600px) {
+    [id^="but"] {
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/aboutme.css">
+    <!-- The NEW separate projects CSS file -->
+    <link rel="stylesheet" href="/static/css/projects.css"> 
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h2 id="details">
+            <a href="https://www.linkedin.com/" target="_blank">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn
+            </a>
+            |
+            <a href="https://github.com/" target="_blank">
+                <i class="fa-brands fa-github"></i> GitHub
+            </a>
+        </h2>
+        <div class="nav-bar">
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('about_me') }}">About me</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('aspirations') }}">Aspirations</a></li>
+                <li>|</li>
+                <li><a href="{{ url_for('contactme') }}">Contact Me</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Projects Main Content -->
+    <main class="projects-container">
+        <h1 class="section-title">Recent <span id = "title-projects">Projects</span></h1>
+
+        <div class="projects-grid">
+            
+            <!-- Project Card 1 -->
+            <article class="project-card">
+                <div class="card-image">
+                    <img src="/static/images/portfolio.png" alt="yes">
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-desc">
+                        A responsive personal portfolio website built with Python Flask to showcase my skills and projects.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Flask</span>
+                        <span class="tech-tag">CSS3</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="project-card">
+                <div class="card-image" style="background: linear-gradient(135deg, #FF9A9E 0%, #FECFEF 100%);">
+                    <img src="/static/images/UFC.jpg" alt="yes">
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">UFC Fight Prediction/Analysis</h3>
+                    <p class="project-desc">
+                        My honours dissertation project inolving machine learning and data analysis to predict outcomes of UFC fights.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="{{ url_for('ufc_predictor') }}" class="btn btn-fill"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="project-card">
+                <div class="card-image" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+                    <img src="/static/images/ico.jpg" alt="yes">
+                </div>
+                <div class="card-content">
+                    <h3 class="project-title">ICO Classification Algorithm</h3>
+                    <p class="project-desc">
+                        A machine learning algorithm that looked to classify ICO decisions, build for research purposes.
+                    </p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Numpy</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Pandas</span>
+                    </div>
+                    <div class="card-links">
+                        <a href="#" class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
+                        <a href="#" class="btn btn-fill"><i class="fa-solid fa-up-right-from-square"></i> Live Demo</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+</body>
+</html>

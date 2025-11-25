@@ -1,0 +1,139 @@
+/* ---------- Root Variables (Keeps colors consistent) ---------- */
+:root {
+    --color-cyan: #56ccf2;
+    --color-gold: #f2c94c;
+    --bg-black: #000000;
+    --bg-dark: #121212;
+    --text-main: #ffffff;
+    --text-muted: #cfcfcf;
+    --font-main: 'Ubuntu', sans-serif;
+}
+
+/* ---------- Global Reset ---------- */
+html {
+    box-sizing: border-box; /* Prevents padding from breaking layouts */
+    scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--bg-dark);
+    font-family: var(--font-main);
+    color: var(--text-main);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    /* Improves text rendering on modern screens */
+    -webkit-font-smoothing: antialiased; 
+}
+
+/* ---------- Header Container ---------- */
+.header {
+    position: relative; /* Use 'sticky' and 'top: 0' if you want it to float while scrolling */
+    width: 100%;
+    height: 100px; /* Fixed height for stability */
+    
+    display: flex;
+    justify-content: space-between; /* Pushes Content to far left and far right */
+    align-items: center;
+    
+    padding: 0 5%; /* Responsive horizontal padding */
+    z-index: 1000; /* Ensures header stays on top */
+}
+
+/* ---------- Left Side: Details / Socials ---------- */
+#details {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Clean space between items */
+}
+
+#details a {
+    text-decoration: none;
+    color: var(--text-muted);
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-flex; /* Aligns icons perfectly */
+    align-items: center;
+}
+
+#details i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* Hover Effect for Socials */
+#details a:hover {
+    color: var(--color-cyan); /* Pop of color */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* ---------- Right Side: Navigation ---------- */
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 40px; /* More space between links looks cleaner */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline-block;
+}
+
+.nav-links a {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 300;
+    text-decoration: none;
+    position: relative; /* Needed for the underline animation */
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+/* The "Sleek Underline" Animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-gold); /* Matches your theme */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Hover State */
+.nav-links a:hover {
+    opacity: 1;
+    color: white;
+}
+
+.nav-links a:hover::after {
+    width: 100%; /* Line grows from 0 to 100% */
+}
+
+/* ---------- Mobile Responsive Tweak ---------- */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 20px;
+        font-size: 0.9rem;
+    }
+}

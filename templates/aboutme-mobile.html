@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+
+    <link rel="stylesheet" href="/static/css/style-mobile.css">
+    <link rel="stylesheet" href="/static/css/aboutme-mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- MENU BUTTON (Floating) -->
+    <button id="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar" id="sidebar">
+        <!-- Close Button inside the menu -->
+        <button id="close-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <ul class="nav-links">
+            <!-- Socials at the top -->
+            <div class="social-group">
+                <li><a href="#" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+                <li><a href="#" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            </div>
+            <hr>
+            <!-- Navigation -->
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('projects') }}">Projects & Skills</a></li>
+            <li><a href="{{ url_for('aspirations') }}">Aspirations</a></li>
+            <li><a href="{{ url_for('contactme') }}">Contact Me</a></li>
+        </ul>
+    </div>
+
+    <!-- PAGE CONTENT -->
+    <div id="content">
+        <div class="sec-1">
+            <h1>Who am I?</h1>
+            <p>
+                I'm a recent graduate from the University of the West of Scotland where I achieved a 
+                <span id="word1">first class honors</span> degree in Computing Science. Throughout my time at university, 
+                I discovered my <span id="word4">passion for engineering solutions</span> through problem solving and digital application.
+                <br><br>
+                Although my early years of university sparked my pursuit of learning software development fundamentals 
+                and computer architecture, it wasn't until my final year where I took a class in 
+                <span id="word2">Machine Learning</span> where the fire was lit fully.
+                <br><br>
+                This brought me to applying machine learning to my dissertation where 
+                <span id="word3">I designed a model to predict UFC matches and give fighter statistic analysis</span> 
+                which was graded an <span id="A">A.</span> My UFC predictor model is on my portfolio if you would like to check it out.
+            </p>
+        </div>
+
+        <div class="sec-2">
+            <img src="/static/images/me.jpg" alt="Joshua Coyle">
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const sidebar = document.getElementById('sidebar');
+        const content = document.getElementById('content');
+
+        // Function to open menu
+        function openMenu() {
+            sidebar.classList.add('active');
+            content.classList.add('blurred');
+            menuBtn.style.opacity = '0'; // Fade out menu button
+            menuBtn.style.pointerEvents = 'none'; // Prevent clicking invisible button
+        }
+
+        // Function to close menu
+        function closeMenu() {
+            sidebar.classList.remove('active');
+            content.classList.remove('blurred');
+            menuBtn.style.opacity = '1'; // Fade in menu button
+            menuBtn.style.pointerEvents = 'auto';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeBtn.addEventListener('click', closeMenu);
+
+        // Close menu if clicking on the blurred content
+        content.addEventListener('click', () => {
+            if(sidebar.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
