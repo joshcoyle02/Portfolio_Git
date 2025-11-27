@@ -87,8 +87,8 @@ body {
 }
 
 .sec-2 img {
-    width: 320px;
-    height: 320px;
+    width: 420px;
+    height: 420px;
     border-radius: 50%; /* Circular */
     object-fit: cover;
     
@@ -96,7 +96,7 @@ body {
     border: 5px solid var(--bg-card);
     
     /* Cyan Glow Effect */
-    box-shadow: 0 0 30px rgba(86, 204, 242, 0.2); 
+    box-shadow: 0 0 30px rgba(32, 32, 32, 0.2); 
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 

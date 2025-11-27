@@ -29,7 +29,7 @@ body {
 h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--color-cyan);
+    color: white;
     text-transform: uppercase;
     letter-spacing: 2px;
     border-bottom: 3px solid var(--color-cyan);
@@ -196,6 +196,7 @@ button[type="submit"]:active {
     display: flex;
     flex-direction: column;
     margin-top:50px;
+    margin-bottom:50px;
 }
 
 .sec2 h1{
