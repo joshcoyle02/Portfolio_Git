@@ -1,0 +1,196 @@
+/* ------------------------------------------------------------------------- */
+/* --- UFC Predictor Page Styles (ufc-predictor.css) --- */
+/* ------------------------------------------------------------------------- */
+
+/* Define variables for demonstration/fallbacks if not globally available */
+:root {
+    --color-red: #ff4757;
+    --color-green: #2ecc71;
+    --color-yellow: #feca57;
+    --color-cyan: #0abde3; /* Primary accent color */
+    --color-dark-bg: #1a1a2e;
+    --color-card-bg: #21213e;
+    --color-text-light: #f1f1f1;
+}
+
+body {
+    background-color: var(--color-dark-bg);
+    color: var(--color-text-light);
+    font-family: 'Ubuntu', sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Page Title */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-cyan);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid var(--color-cyan);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(10, 189, 227, 0.4);
+}
+
+/* Main Form Container Styling */
+form {
+    background: var(--color-card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* --- Select2 Custom Styling --- */
+
+/* Container for the Select2 box */
+.select2-container--default .select2-selection--single {
+    height: 44px;
+    border: 2px solid var(--color-dark-bg);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: #2b2b4d; /* Slightly lighter than card-bg for contrast */
+}
+
+/* Focus state (when dropdown is open or selected) */
+.select2-container--default.select2-container--focus .select2-selection--single {
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 5px var(--color-cyan);
+}
+
+/* Displayed value inside the input */
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    line-height: 40px;
+    color: var(--color-text-light);
+    padding-left: 15px;
+}
+
+/* Arrow icon */
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    height: 42px;
+    width: 30px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+    border-color: var(--color-cyan) transparent transparent transparent !important;
+}
+
+/* Dropdown results menu */
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+    background-color: var(--color-cyan) !important;
+    color: var(--color-dark-bg);
+}
+
+/* General style for results */
+.select2-dropdown {
+    border: 1px solid var(--color-cyan);
+    border-radius: 8px;
+    background-color: var(--color-card-bg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Search box within the dropdown */
+.select2-search--dropdown .select2-search__field {
+    border: 1px solid var(--color-dark-bg);
+    background-color: #2b2b4d;
+    color: var(--color-text-light);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+/* --- Button Styling --- */
+
+button[type="submit"] {
+    background-color: var(--color-cyan);
+    color: var(--color-dark-bg);
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button[type="submit"]:hover {
+    background-color: #089ac9; /* Slightly darker cyan on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(10, 189, 227, 0.6);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* --- Prediction Result Styling --- */
+
+.prediction-result {
+    background: var(--color-card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border: 2px solid var(--color-cyan);
+}
+
+.prediction-result h2 {
+    color: var(--color-cyan);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed rgba(10, 189, 227, 0.5);
+    padding-bottom: 10px;
+}
+
+.prediction-result p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.prediction-result strong {
+    font-weight: 700;
+    color: var(--color-green); /* Use green for positive results/winner */
+}
+
+/* Styling for error message in result box */
+.prediction-result p[style*="color: red"] {
+    color: var(--color-red) !important;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    form, .prediction-result {
+        padding: 20px;
+    }
+    button[type="submit"] {
+        font-size: 1.1rem;
+    }
+}
