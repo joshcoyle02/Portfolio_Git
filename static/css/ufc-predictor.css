@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: var(--color-dark-bg);
+    background-color: var(--bg-dark);
     color: var(--color-text-light);
     font-family: 'Ubuntu', sans-serif;
     min-height: 100vh;
