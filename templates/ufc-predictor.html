@@ -52,6 +52,8 @@
             <option value="{{ fighter }}">{{ fighter }}</option>
             {% endfor %}
         </select>
+
+        </div>
         <br><br>
         <label for="fighter_B">Fighter B:</label>
         <select id="fighter_B" name="fighter_B" required>
@@ -60,31 +62,49 @@
             <option value="{{ fighter }}">{{ fighter }}</option>
             {% endfor %}
         </select>
+
         <br><br>
         <button type="submit">Predict</button>
     </form>
 
     {% if prediction %}
         <div class="prediction-result">
-            <h2>Prediction Result</h2>
             {% if prediction.winner %}
+                <h2>Prediction Result</h2>
                 <p><strong>Winner:</strong> {{ prediction.winner }}</p>
                 <p><strong>Confidence:</strong> {{ prediction.confidence }}</p>
             {% elif prediction.error %}
                 <p style="color: red;"><strong>Error:</strong> {{ prediction.error }}</p>
             {% endif %}
         </div>
+
     {% endif %}
+
+    <div class="sec2">
+        <h1>About this project</h1>
+        <p>
+            The UFC Predictor is a machine learning-based web application designed to predict the outcome of UFC fights between two selected fighters. 
+            Users can choose fighters from a dropdown list, and upon submission, the application utilizes a pre-trained model to forecast the likely winner 
+            and the confidence level of that prediction.
+            <br><br>
+            This project was devleoped as part of my honours year dissertation, where I explored the idea of using machine learning and data analysis to enhance
+            sports predictions. The model was trained on historical fight data, including fighter statistics, previous match
+            <br><br>
+            I trained various machine learning algorithms using two datasets from kaggle that contained historical UFC fight data and fighter statistics.
+            After using a K-fold cross validation to evaluate the models, I found that the Logistic Regression algorithm performed the best with an F1 Score of 0.73.
+            <br><br>
+            The confidence metric indicates the probability associated with the predicted winner, as the Logistic Regression model provides probability estimates for each class.
+            <br><br>
+            My dissertation paper that coincides with this project can be found <a href="https://github.com/joshcoyle02/UFC-Fight-Predictor/blob/main/UFC%20Fight%20Predictor%20Paper.pdf" target="_blank">here</a>, which was graded at 78% which greatly contributed to my overall grade for my honours year.
+            You can also view the code for this project on my <a href="https://github.com/joshcoyle02/UFC-Fight-Predictor/blob/main/Fight%20Predictor%20Test.ipynb" target="_blank">here</a> or by visiting my GitHub page by using the link at the top left of this page.
+        </p>
+
+    </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Select2 JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#fighter_A').select2();
-            $('#fighter_B').select2();
-        });
-    </script>
+
 </body>
 </html>

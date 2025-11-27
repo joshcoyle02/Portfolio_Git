@@ -34,13 +34,13 @@ h1 {
     letter-spacing: 2px;
     border-bottom: 3px solid var(--color-cyan);
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     text-shadow: 0 0 10px rgba(10, 189, 227, 0.4);
 }
 
 /* Main Form Container Styling */
 form {
-    background: var(--color-card-bg);
+    background-color: rgb(26, 26, 26);   
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
@@ -119,7 +119,7 @@ label {
 
 button[type="submit"] {
     background-color: var(--color-cyan);
-    color: var(--color-dark-bg);
+    color: rgb(255, 255, 255);
     font-size: 1.2rem;
     font-weight: 700;
     padding: 12px 20px;
@@ -130,12 +130,17 @@ button[type="submit"] {
     transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: 0.7s;
+    
 }
 
 button[type="submit"]:hover {
-    background-color: #089ac9; /* Slightly darker cyan on hover */
+    background-color: #69d9ff; /* Slightly darker cyan on hover */
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(10, 189, 227, 0.6);
+    border-radius: 30px;
+    transition: 0.7s;
+    color:Black;
 }
 
 button[type="submit"]:active {
@@ -180,6 +185,44 @@ button[type="submit"]:active {
     color: var(--color-red) !important;
     font-style: italic;
     font-size: 1.2rem;
+}
+
+.sec2{
+    background-color: rgb(26, 26, 26);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-top:50px;
+}
+
+.sec2 h1{
+    color: white;
+    border-bottom: 3px solid #0abde3;;
+
+}
+
+.sec2 p{
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+.sec2 a{
+    color: #0abde3;
+    text-decoration: none;
+        transition: 0.4s;
+
+}
+
+.sec2 a:hover{
+    text-decoration: underline;
+    color: #69d9ff;
+    transition: 0.4s;
+    font-weight: 600;
 }
 
 /* Responsive Adjustments */
